@@ -1,0 +1,49 @@
+* diff -rq ./DotNetty/src/DotNetty.Buffers ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity\ Plugins/DotNetty.Buffers
+** Files ./DotNetty/src/DotNetty.Buffers/PoolThreadCache.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Buffers/PoolThreadCache.cs differ
+** Files ./DotNetty/src/DotNetty.Buffers/UnsafeByteBufferUtil.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Buffers/UnsafeByteBufferUtil.cs differ
+
+* diff -rq ./DotNetty/src/DotNetty.Codecs ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity\ Plugins/DotNetty.Codecs
+
+* diff -rq ./DotNetty/src/DotNetty.Common ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity\ Plugins/DotNetty.Common
+** Only in ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Common/Concurrency: XThread.cs
+** Files ./DotNetty/src/DotNetty.Common/Concurrency/AbstractEventExecutor.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Common/Concurrency/AbstractEventExecutor.cs differ
+** Files ./DotNetty/src/DotNetty.Common/Concurrency/IEventExecutor.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Common/Concurrency/IEventExecutor.cs differ
+** Files ./DotNetty/src/DotNetty.Common/Concurrency/SingleThreadEventExecutor.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Common/Concurrency/SingleThreadEventExecutor.cs differ
+** Files ./DotNetty/src/DotNetty.Common/ThreadDeathWatcher.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Common/ThreadDeathWatcher.cs differ
+** Files ./DotNetty/src/DotNetty.Common/ThreadLocalPool.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Common/ThreadLocalPool.cs differ
+** Files ./DotNetty/src/DotNetty.Common/Utilities/HashedWheelTimer.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Common/Utilities/HashedWheelTimer.cs differ
+** Files ./DotNetty/src/DotNetty.Common/Utilities/ReferenceCountUtil.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Common/Utilities/ReferenceCountUtil.cs differ
+** Files ./DotNetty/src/DotNetty.Common/Utilities/ThreadExtensions.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Common/Utilities/ThreadExtensions.cs differ
+
+* diff -rq ./DotNetty/src/DotNetty.Handlers ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity\ Plugins/DotNetty.Handlers/
+** Files ./DotNetty/src/DotNetty.Handlers/Tls/SniHandler.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Handlers/Tls/SniHandler.cs differ
+** Files ./DotNetty/src/DotNetty.Handlers/Tls/TlsHandler.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Handlers/Tls/TlsHandler.cs differ
+
+* diff -rq ./DotNetty/src/DotNetty.Transport ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity\ Plugins/DotNetty.Transport
+** Files ./DotNetty/src/DotNetty.Transport/Channels/AbstractChannelHandlerContext.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Transport/Channels/AbstractChannelHandlerContext.cs differ
+** Files ./DotNetty/src/DotNetty.Transport/Channels/DefaultChannelPipeline.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Transport/Channels/DefaultChannelPipeline.cs differ
+** Files ./DotNetty/src/DotNetty.Transport/Channels/Embedded/EmbeddedEventLoop.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Transport/Channels/Embedded/EmbeddedEventLoop.cs differ
+** Files ./DotNetty/src/DotNetty.Transport/Channels/Sockets/AbstractSocketByteChannel.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Transport/Channels/Sockets/AbstractSocketByteChannel.cs differ
+** Files ./DotNetty/src/DotNetty.Transport/Channels/Sockets/AbstractSocketMessageChannel.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Transport/Channels/Sockets/AbstractSocketMessageChannel.cs differ
+** Files ./DotNetty/src/DotNetty.Transport/Channels/Sockets/SocketDatagramChannel.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Transport/Channels/Sockets/SocketDatagramChannel.cs differ
+** Files ./DotNetty/src/DotNetty.Transport/Channels/Sockets/TcpServerSocketChannel.cs and ./DotNetty_For_Unity/DotNetty-0.6.0_forUnity Plugins/DotNetty.Transport/Channels/Sockets/TcpServerSocketChannel.cs differ
+
+
+
+DotNetty is an EventDriven high-performance asynchronous network framework, Netty, which is widely used in the Java camp.
+Ported to C# .NET.
+To use DotNetty in Unity GameEngine, we modified some code from the DotNetty repository.
+
+DotNetty Repository -> https://github.com/Azure/DotNetty
+
+
+
+Tested on Unity 2019.2.10f.
+(Test Settings -> IL2CPP Build, Release Mode, API Compatibility .NET Standard 2.0 & .NET 4.x)
+
+It has been confirmed that TCP and UDP communication works in Android, iOS, and Standalone Windows & MacOS builds.
+
+
+How to use
+
+You can use it after copying the DotNetty-0.6.0_forUnity Plugins folder to the Assets/Plugins folder of your Unity project.
