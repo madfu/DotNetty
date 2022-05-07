@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// wizard872 - DotNetty_For_Unity
 
 namespace DotNetty.Transport.Channels
 {
@@ -169,7 +170,27 @@ namespace DotNetty.Transport.Channels
             var newParamTypes = new Type[paramTypes.Length + 1];
             newParamTypes[0] = typeof(IChannelHandlerContext);
             Array.Copy(paramTypes, 0, newParamTypes, 1, paramTypes.Length);
-            return handlerType.GetMethod(methodName, newParamTypes).GetCustomAttribute<SkipAttribute>(false) != null;
+
+            // wizard872
+            // return handlerType.GetMethod(methodName, newParamTypes).GetCustomAttribute<SkipAttribute>(false) != null;
+
+            // wizard872
+            if (handlerType != null)
+            {
+                MethodInfo methodInfo = handlerType.GetMethod(methodName, newParamTypes);
+                if (methodInfo != null)
+                {
+                    return methodInfo.GetCustomAttribute<SkipAttribute>(false) != null;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
         internal volatile AbstractChannelHandlerContext Next;

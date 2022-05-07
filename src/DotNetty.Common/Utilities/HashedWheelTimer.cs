@@ -1,6 +1,6 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
-
+// wizard872 - DotNetty_For_Unity
 
 #pragma warning disable 420
 
@@ -27,7 +27,11 @@ namespace DotNetty.Common.Utilities
         const int InstanceCountLimit = 64;
 
         readonly Worker worker;
-        readonly Thread workerThread;
+        // from wizard872
+        // readonly Thread workerThread;
+
+        // from wizard872
+        readonly XThread workerThread;
         readonly CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
         const int WorkerStateInit = 0;
@@ -99,7 +103,11 @@ namespace DotNetty.Common.Utilities
                         long.MaxValue / this.wheel.Length));
             }
 
-            this.workerThread = new Thread(st => this.worker.Run());
+            // from wizard872
+            // this.workerThread = new Thread(st => this.worker.Run());
+
+            // from wizard872
+            this.workerThread = new XThread(st => this.worker.Run());
             this.workerThread.IsBackground = true;
 
             this.maxPendingTimeouts = maxPendingTimeouts;
@@ -189,7 +197,9 @@ namespace DotNetty.Common.Utilities
         {
             GC.SuppressFinalize(this);
 
-            if (Thread.CurrentThread == this.workerThread)
+            // from wizard872
+            // if (Thread.CurrentThread == this.workerThread)
+            if (XThread.CurrentThread == this.workerThread)
             {
                 throw new InvalidOperationException($"{nameof(HashedWheelTimer)}.stop() cannot be called from timer task.");
             }

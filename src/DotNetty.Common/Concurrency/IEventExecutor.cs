@@ -1,10 +1,15 @@
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// wizard872 - DotNetty_For_Unity
 
 namespace DotNetty.Common.Concurrency
 {
-    using System.Threading;
- 
+    // from wizard872
+    // using System.Threading;
+
+    // added due to wizard872
+    using Thread = DotNetty.Common.Concurrency.XThread;
+
     public interface IEventExecutor : IEventExecutorGroup
     {
         /// <summary>

@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// wizard872 - DotNetty_For_Unity
 
 namespace DotNetty.Common
 {
@@ -10,6 +11,9 @@ namespace DotNetty.Common
     using DotNetty.Common.Concurrency;
     using DotNetty.Common.Internal;
     using DotNetty.Common.Internal.Logging;
+
+    // from wizard872
+    using Thread = DotNetty.Common.Concurrency.XThread;
 
     public static class ThreadDeathWatcher
     {

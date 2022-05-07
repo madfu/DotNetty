@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// wizard872 - DotNetty_For_Unity
 
 // ReSharper disable ConvertToAutoPropertyWhenPossible
 // ReSharper disable ConvertToAutoProperty
@@ -19,6 +20,9 @@ namespace DotNetty.Transport.Libuv
     using DotNetty.Common;
     using DotNetty.Transport.Libuv.Native;
     using Timer = Native.Timer;
+
+    // added due to wizard872
+    using Thread = DotNetty.Common.Concurrency.XThread;
 
     class LoopExecutor : AbstractScheduledEventExecutor
     {
@@ -101,7 +105,9 @@ namespace DotNetty.Transport.Libuv
 
         internal Loop UnsafeLoop => this.loop;
 
-        internal int LoopThreadId => this.thread.ManagedThreadId;
+        // changed due to wizard872
+        // internal int LoopThreadId => this.thread.ManagedThreadId;
+        internal int LoopThreadId => this.thread.Id;
 
         static void Run(object state)
         {

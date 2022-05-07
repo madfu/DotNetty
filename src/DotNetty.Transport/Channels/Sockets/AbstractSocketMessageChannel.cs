@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// wizard872 - DotNetty_For_Unity
 
 namespace DotNetty.Transport.Channels.Sockets
 {
@@ -43,6 +44,8 @@ namespace DotNetty.Transport.Channels.Sockets
                 AbstractSocketMessageChannel ch = this.Channel;
                 if ((ch.ResetState(StateFlags.ReadScheduled) & StateFlags.Active) == 0)
                 {
+                    // from wizard872
+                    ch.Pipeline.FireExceptionCaught(new Exception("AbstractSocketMessageChannel::FinishRead() UDP Receive Disabled.\n(ch.ResetState(StateFlags.ReadScheduled) & StateFlags.Active) == 0"));
                     return; // read was signaled as a result of channel closure
                 }
                 IChannelConfiguration config = ch.Configuration;
@@ -121,6 +124,13 @@ namespace DotNetty.Transport.Channels.Sockets
                     if (!closed && (ch.ReadPending || config.AutoRead))
                     {
                         ch.DoBeginRead();
+                    }
+                    else
+                    {   // from wizard872
+                        if (!closed)
+                        {
+                            ch.DoBeginRead();
+                        }
                     }
                 }
             }

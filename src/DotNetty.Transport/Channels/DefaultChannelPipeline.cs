@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// wizard872 - DotNetty_For_Unity
 
 namespace DotNetty.Transport.Channels
 {
@@ -16,6 +17,9 @@ namespace DotNetty.Transport.Channels
     using DotNetty.Common.Concurrency;
     using DotNetty.Common.Internal.Logging;
     using DotNetty.Common.Utilities;
+
+    // from wizard872
+    using Thread = DotNetty.Common.Concurrency.XThread;
 
     public class DefaultChannelPipeline : IChannelPipeline
     {

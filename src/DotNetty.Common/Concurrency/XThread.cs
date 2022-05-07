@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// wizard872 - DotNetty_For_Unity
 
 namespace DotNetty.Common.Concurrency
 {
@@ -26,6 +27,10 @@ namespace DotNetty.Common.Concurrency
         readonly EventWaitHandle completed = new EventWaitHandle(false, EventResetMode.AutoReset);
         readonly EventWaitHandle readyToStart = new EventWaitHandle(false, EventResetMode.AutoReset);
         object startupParameter;
+
+        // added due to missing variable in DotNetty.Transport.Libuv.LoopExecutor -- wizard872
+        // what is this supposed to do in a normal Thread?
+        public bool IsBackground;
 
         static int GetNewThreadId() => Interlocked.Increment(ref maxThreadId);
 

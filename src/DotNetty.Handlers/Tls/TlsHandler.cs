@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// wizard872 - DotNetty_For_Unity
 
 namespace DotNetty.Handlers.Tls
 {
@@ -176,6 +177,8 @@ namespace DotNetty.Handlers.Tls
             }
         }
 
+        // from wizard872 but doesn't work.
+        // protected internal override void Decode(IChannelHandlerContext context, IByteBuffer input, List<object> output)
         protected override void Decode(IChannelHandlerContext context, IByteBuffer input, List<object> output)
         {
             int startOffset = input.ReaderIndex;
