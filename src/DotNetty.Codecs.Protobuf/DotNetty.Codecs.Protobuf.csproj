@@ -34,6 +34,6 @@
     <ProjectReference Include="..\DotNetty.Transport\DotNetty.Transport.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Google.Protobuf" Version="3.19.4" />
+    <PackageReference Include="Google.Protobuf" Version="3.20.1"/>
   </ItemGroup>
 </Project>
